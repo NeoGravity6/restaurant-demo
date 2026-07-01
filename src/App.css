@@ -601,6 +601,169 @@ body {
   color: #9aaba0;
 }
 
+/* ─── Order Tracking ──────────────────────────────────── */
+.tracking {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.tracking-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ede9e4;
+  box-shadow: 0 4px 16px rgba(26, 39, 31, 0.08);
+  padding: 32px;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tracking-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #1a271f;
+  margin-bottom: 4px;
+}
+
+.tracking-meta {
+  font-size: 0.8rem;
+  color: #9aaba0;
+}
+
+.tracking-eta {
+  align-self: flex-start;
+  font-size: 0.875rem;
+  padding: 7px 16px 7px 12px;
+}
+
+/* Timeline */
+.tracking-timeline {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 40px;
+}
+
+.tracking-step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tracking-step:last-child {
+  flex: 0;
+}
+
+.tracking-step-dot {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: white;
+  background: #d8d4cf;
+  transition: background 0.55s ease;
+}
+
+.tracking-step.active .tracking-step-dot {
+  background: #00c1b2;
+  box-shadow: 0 0 0 4px rgba(0, 193, 178, 0.18);
+  animation: eta-pulse 1.8s ease-in-out infinite;
+}
+
+.tracking-step.complete .tracking-step-dot {
+  background: #00c1b2;
+}
+
+.tracking-step-label {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 90px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9aaba0;
+  white-space: normal;
+}
+
+.tracking-step.active .tracking-step-label,
+.tracking-step.complete .tracking-step-label {
+  color: #1a271f;
+}
+
+.tracking-step-connector {
+  flex: 1;
+  height: 3px;
+  margin: 0 4px;
+  background: #ede9e4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tracking-step-connector-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #00c1b2;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.55s ease;
+}
+
+/* Fake delivery map */
+.tracking-map {
+  position: relative;
+  height: 64px;
+  margin-top: 24px;
+}
+
+.map-road {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(90deg, #d8d4cf 0 10px, transparent 10px 20px);
+  border-radius: 2px;
+}
+
+.map-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: left 0.2s linear;
+}
+
+.map-flag {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.tracking-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 8px 0;
+}
+
 /* Success */
 .success-icon {
   width: 56px;
